@@ -1,6 +1,15 @@
 myvimconfig
 ===========
 
+Prerequisites
+-------------
+
+1. Vundle
+
+To install: 
+
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 Installation
 ------------
 
@@ -8,3 +17,5 @@ Installation
     ln -s myvimconfig/.vimrc ~/.vimrc
     ln -s myvimconfig/.gvimrc ~/.gvimrc
     ln -s myvimconfig/mysnippets ~/.vim/mysnippets
+
+Open vim and run PluginInstall
