@@ -23,3 +23,5 @@ Open vim and run PluginInstall
 Build YouCompleteMe:
     
     ./install.sh --clang-completer
+
+For missing fonts on Linux see here: http://customizeubuntu.com/appearance/fonts/install-mac-os-fonts-in-ubuntu 

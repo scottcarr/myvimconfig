@@ -71,7 +71,7 @@ let g:ycm_filetype_whitelist = {
         \ 'cc': 1,
         \ 'py': 1
         \}
-let g:ycm_extra_conf_globlist = ['~/llvmTutorial', '~/scratch/*', '!~/llvm/*']
+let g:ycm_extra_conf_globlist = ['~/llvmTutorial', '~/scratch/*', '!~/llvm/*', '~/sunblaze-ucb/llvm/*']
 "let g:ycm_confirm_extra_conf = 0
 
 " GENERAL
@@ -83,9 +83,23 @@ set ignorecase
 set smartcase
 set autochdir
 set rnu
-
+set cursorline
+set foldmethod=syntax
+set foldlevel=99
+if has("gui_running")
+  if has("gui_gtk2")
+    "set guifont=Inconsolata\ 10
+    set guifont=Andale\ Mono\ 10
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
+endif
 " COLORS
 colorscheme railscasts
+"highlight Cursor guifg=white guibg=black
+"highlight iCursor guifg=white guibg=steelblue
 
 " status line junk
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
