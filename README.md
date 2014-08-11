@@ -19,3 +19,7 @@ Installation
     ln -s myvimconfig/mysnippets ~/.vim/mysnippets
 
 Open vim and run PluginInstall
+
+Build YouCompleteMe:
+    
+    ./install.sh --clang-completer
