@@ -90,9 +90,23 @@ set ignorecase
 set smartcase
 "set autochdir
 set rnu
-
+set cursorline
+set foldmethod=syntax
+set foldlevel=99
+if has("gui_running")
+  if has("gui_gtk2")
+    "set guifont=Inconsolata\ 10
+    set guifont=Andale\ Mono\ 10
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
+endif
 " COLORS
 colorscheme railscasts
+"highlight Cursor guifg=white guibg=black
+"highlight iCursor guifg=white guibg=steelblue
 
 " status line junk
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
