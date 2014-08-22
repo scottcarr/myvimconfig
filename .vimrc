@@ -71,7 +71,14 @@ let g:ycm_filetype_whitelist = {
         \ 'cc': 1,
         \ 'py': 1
         \}
-let g:ycm_extra_conf_globlist = ['~/llvmTutorial', '~/scratch/*', '!~/llvm/*']
+let g:ycm_extra_conf_globlist = [
+        \ '~/llvmTutorial/*', 
+        \ '~/scratch/*', 
+        \ '~/sunblaze-ucb/hacking/*', 
+        \ '~/sunblaze-ucb/*', 
+        \ '!~/llvm/*',
+        \ '~/hacking/*'
+        \]
 "let g:ycm_confirm_extra_conf = 0
 
 " GENERAL
@@ -81,7 +88,7 @@ set tabstop=4
 set shiftwidth=4
 set ignorecase
 set smartcase
-set autochdir
+"set autochdir
 set rnu
 
 " COLORS
