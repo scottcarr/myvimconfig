@@ -30,8 +30,10 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'Lokaltog/powerline'
 Plugin 'octol/vim-cpp-enhanced-highlight' 
 Plugin 'flazz/vim-colorschemes'
+Plugin 'wincent/command-t'
 " Track the engine.
 Plugin 'SirVer/ultisnips'
+Plugin 'tpope/vim-fugitive'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
@@ -111,3 +113,5 @@ colorscheme railscasts
 " status line junk
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2 
+
+let $LABNOTES="~/LabNoteBook/notes.md"
