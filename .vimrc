@@ -63,6 +63,9 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "
 
+" COLORS
+colorscheme railscasts
+
 " YOUCOMPLETEME
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 let g:ycm_filetype_whitelist = { 
@@ -79,6 +82,7 @@ let g:ycm_extra_conf_globlist = [
         \ '~/sunblaze-ucb/hacking/*', 
         \ '~/sunblaze-ucb/*', 
         \ '!~/llvm/*',
+        \ '~/data-integrity/fcfi-llvm/*',
         \ '~/hacking/*'
         \]
 "let g:ycm_confirm_extra_conf = 0
@@ -105,8 +109,6 @@ if has("gui_running")
     set guifont=Consolas:h11:cANSI
   endif
 endif
-" COLORS
-colorscheme railscasts
 "highlight Cursor guifg=white guibg=black
 "highlight iCursor guifg=white guibg=steelblue
 
