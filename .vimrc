@@ -38,6 +38,9 @@ Plugin 'tpope/vim-fugitive'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
 " ULTISNIPS
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<leader>s"
@@ -65,6 +68,9 @@ filetype plugin indent on    " required
 
 " YOUCOMPLETEME
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+" nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
+" nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
+
 let g:ycm_filetype_whitelist = { 
         \ 'c': 1,
         \ 'cpp': 1,
@@ -79,7 +85,8 @@ let g:ycm_extra_conf_globlist = [
         \ '~/sunblaze-ucb/hacking/*', 
         \ '~/sunblaze-ucb/*', 
         \ '!~/llvm/*',
-        \ '~/hacking/*'
+        \ '~/hacking/*',
+        \ '~/data-integrity/fcfi-llvm/*'
         \]
 "let g:ycm_confirm_extra_conf = 0
 
@@ -93,8 +100,8 @@ set smartcase
 "set autochdir
 set rnu
 set cursorline
-set foldmethod=syntax
-set foldlevel=99
+"set foldmethod=syntax
+"set foldlevel=99
 if has("gui_running")
   if has("gui_gtk2")
     "set guifont=Inconsolata\ 10
@@ -115,3 +122,6 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2 
 
 let $LABNOTES="~/LabNoteBook/notes.md"
+
+autocmd InsertEnter * hi Cursorline ctermbg=236
+autocmd InsertLeave * hi Cursorline ctermbg=9
