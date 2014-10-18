@@ -103,8 +103,8 @@ set smartcase
 "set autochdir
 set rnu
 set cursorline
-"set foldmethod=syntax
-"set foldlevel=99
+set foldmethod=syntax
+set foldlevel=99
 if has("gui_running")
   if has("gui_gtk2")
     "set guifont=Inconsolata\ 10
@@ -126,3 +126,10 @@ let $LABNOTES="~/LabNoteBook/notes.md"
 
 autocmd InsertEnter * hi Cursorline ctermbg=236
 autocmd InsertLeave * hi Cursorline ctermbg=9
+
+autocmd FileType mkd set wrap
+autocmd FileType mkd set textwidth=80
+
+autocmd FileType tex set wrap
+autocmd FileType tex set textwidth=80
+autocmd FileType tex set spell
