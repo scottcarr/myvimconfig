@@ -88,6 +88,8 @@ let g:ycm_extra_conf_globlist = [
         \ '~/sunblaze-ucb/hacking/*', 
         \ '~/sunblaze-ucb/*', 
         \ '!~/llvm/*',
+        \ '!~/dataconf/inf_test/*',
+        \ '!~/dataconf/test/*',
         \ '~/hacking/*',
         \ '~/data-integrity/fcfi-llvm/*',
         \ '~/dataconf/*'
