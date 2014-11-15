@@ -89,7 +89,8 @@ let g:ycm_extra_conf_globlist = [
         \ '~/sunblaze-ucb/*', 
         \ '!~/llvm/*',
         \ '~/hacking/*',
-        \ '~/data-integrity/fcfi-llvm/*'
+        \ '~/data-integrity/fcfi-llvm/*',
+        \ '~/dataconf/*'
         \]
 "let g:ycm_confirm_extra_conf = 0
 
@@ -133,3 +134,7 @@ autocmd FileType mkd set textwidth=80
 autocmd FileType tex set wrap
 autocmd FileType tex set textwidth=80
 autocmd FileType tex set spell
+
+autocmd BufNewFile,BufRead * set makeprg=make
+autocmd BufNewFile,BufRead */dataconf/llvm/* set makeprg=make\ -j8\ -C\ ../build
+
