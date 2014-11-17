@@ -91,8 +91,9 @@ let g:ycm_extra_conf_globlist = [
         \ '!~/dataconf/inf_test/*',
         \ '!~/dataconf/test/*',
         \ '~/hacking/*',
+        \ '~/portable/*',
         \ '~/data-integrity/fcfi-llvm/*',
-        \ '~/dataconf/*'
+        \ '~/dataconf/llvm/*'
         \]
 "let g:ycm_confirm_extra_conf = 0
 
@@ -140,3 +141,5 @@ autocmd FileType tex set spell
 autocmd BufNewFile,BufRead * set makeprg=make
 autocmd BufNewFile,BufRead */dataconf/llvm/* set makeprg=make\ -j8\ -C\ ../build
 
+set incsearch
+nnoremap <leader>h :set hlsearch! <CR>
