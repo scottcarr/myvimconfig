@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+let mapleader=" "
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -40,6 +41,10 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+"Plugin 'davidhalter/jedi-vim'
+" Plugin 'taglist.vim'
+"Plugin 'xolox/vim-easytags'
+"Plugin 'xolox/vim-misc'
 
 " ULTISNIPS
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -70,9 +75,9 @@ filetype plugin indent on    " required
 colorscheme railscasts
 
 " YOUCOMPLETEME
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
-" nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
-" nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>j :YcmCompleter GoTo<CR>
+nnoremap <leader>f :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>c :YcmCompleter GoToDeclaration<CR>
 
 let g:ycm_filetype_whitelist = { 
         \ 'c': 1,
@@ -93,7 +98,10 @@ let g:ycm_extra_conf_globlist = [
         \ '~/hacking/*',
         \ '~/portable/*',
         \ '~/data-integrity/fcfi-llvm/*',
-        \ '~/dataconf/llvm/*'
+        \ '~/dataconf/llvm/*',
+        \ '~/vt/*',
+        \ '~/dataconf/dataconf/*',
+        \ '~/dataconf-workspace2/*'
         \]
 "let g:ycm_confirm_extra_conf = 0
 
@@ -133,13 +141,37 @@ autocmd InsertLeave * hi Cursorline ctermbg=9
 
 autocmd FileType mkd set wrap
 autocmd FileType mkd set textwidth=80
+autocmd FileType mkd set foldmethod=manual
+autocmd FileType mkd set foldlevel=99
 
 autocmd FileType tex set wrap
 autocmd FileType tex set textwidth=80
 autocmd FileType tex set spell
 
+autocmd FileType text set wrap
+autocmd FileType text set textwidth=80
+autocmd FileType text set spell
+
+autocmd FileType c set foldmethod=syntax
+autocmd FileType c++ set foldmethod=syntax
+
 autocmd BufNewFile,BufRead * set makeprg=make
-autocmd BufNewFile,BufRead */dataconf/llvm/* set makeprg=make\ -j8\ -C\ ../build
+autocmd BufNewFile,BufRead */dataconf/dataconf/* set makeprg=make\ -j8\ -C\ ../build\ LLVMDataConf
+autocmd BufNewFile,BufRead */data-integrity/fcfi-llvm/* set makeprg=make\ -j8\ -C\ ../build 
+"autocmd BufNewFile,BufRead */dataconf-workspace2/* set makeprg=make\ -C\ ../build 
+"autocmd BufNewFile,BufRead */dataconf-workspace2/* set makeprg=ninja\ -C\ ../buildNinja\ clang
+autocmd BufNewFile,BufRead */dataconf-workspace2/* set makeprg=ninja\ -C\ ../buildShared
+autocmd BufNewFile,BufRead */vt/vt-llvm/* set makeprg=make\ -j8\ -C\ ../build 
 
 set incsearch
 nnoremap <leader>h :set hlsearch! <CR>
+
+nnoremap <leader>t :CommandT .<CR>
+
+nnoremap <leader>l :tselect 
+
+nnoremap <leader>m :make 
+
+inoremap <Del> <Esc>
+nnoremap <Del> <Esc>
+
