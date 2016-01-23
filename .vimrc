@@ -36,6 +36,10 @@ Plugin 'wincent/command-t'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive'
 
+"rust
+Plugin 'rust-lang/rust.vim'
+"Plugin 'racer-rust/vim-racer'
+
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
@@ -101,6 +105,7 @@ let g:ycm_extra_conf_globlist = [
         \ '~/dataconf/llvm/*',
         \ '~/vt/*',
         \ '~/dataconf/dataconf/*',
+        \ '~/tanuki-workspace/*',
         \ '~/dataconf-workspace2/*'
         \]
 "let g:ycm_confirm_extra_conf = 0
@@ -175,3 +180,4 @@ nnoremap <leader>m :make
 inoremap <Del> <Esc>
 nnoremap <Del> <Esc>
 
+let g:ycm_rust_src_path = '/Users/scott/rust'
