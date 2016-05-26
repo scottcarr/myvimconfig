@@ -215,3 +215,4 @@ let g:tagbar_type_rust = {
     \}
 
 set number
+
