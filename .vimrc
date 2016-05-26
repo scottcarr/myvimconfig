@@ -28,13 +28,13 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'user/L9', {'name': 'newL9'}
 "
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'Lokaltog/powerline'
+"Plugin 'Lokaltog/powerline'
 Plugin 'octol/vim-cpp-enhanced-highlight' 
 Plugin 'flazz/vim-colorschemes'
 Plugin 'wincent/command-t'
 " Track the engine.
-Plugin 'SirVer/ultisnips'
-Plugin 'tpope/vim-fugitive'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'tpope/vim-fugitive'
 
 "rust
 Plugin 'rust-lang/rust.vim'
@@ -44,11 +44,13 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'honza/vim-snippets'
 
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+"Plugin 'plasticboy/vim-markdown'
 "Plugin 'davidhalter/jedi-vim'
 " Plugin 'taglist.vim'
 "Plugin 'xolox/vim-easytags'
 "Plugin 'xolox/vim-misc'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'majutsushi/tagbar'
 
 " ULTISNIPS
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -118,7 +120,7 @@ set shiftwidth=2
 set ignorecase
 set smartcase
 "set autochdir
-set rnu
+"set rnu
 set cursorline
 set foldmethod=syntax
 set foldlevel=99
@@ -171,13 +173,45 @@ autocmd BufNewFile,BufRead */vt/vt-llvm/* set makeprg=make\ -j8\ -C\ ../build
 set incsearch
 nnoremap <leader>h :set hlsearch! <CR>
 
-nnoremap <leader>t :CommandT .<CR>
+" CommandT
+nnoremap <leader>f :CommandT .<CR>
+nnoremap <leader>b :CommandTBuffer <CR>
+nnoremap <leader>t :CommandTTag <CR>
 
-nnoremap <leader>l :tselect 
-
+nnoremap <leader>l :lw <CR> 
+nnoremap <leader>c :lcl <CR> 
 nnoremap <leader>m :make 
+
+"tagbar
+"nnoremap <leader>s :tselect <CR>
+nnoremap <leader>s :ltag <CR>
+"nnoremap <leader>a :tselect <c-r>=expand("<cword>") <CR>
+nnoremap <leader>a :ltag <c-r>=expand("<cword>") <CR>
+nnoremap <leader>r :Tagbar <CR> 
 
 inoremap <Del> <Esc>
 nnoremap <Del> <Esc>
 
-let g:ycm_rust_src_path = '/Users/scott/rust'
+"nmap <leader>w :s/\(<c-r>=expand("<cword>")<cr>\)/
+
+let g:ycm_rust_src_path = '/Users/scarr/mozilla/rust-workspace/rust'
+
+let $PATH='/Users/scarr/bin/:' . $PATH
+
+set tags=tags;
+
+let g:tagbar_type_rust = {
+    \ 'ctagstype' : 'rust',
+    \ 'kinds' : [
+        \'T:types,type definitions',
+        \'f:functions,function definitions',
+        \'g:enum,enumeration names',
+        \'s:structure names',
+        \'m:modules,module names',
+        \'c:consts,static constants',
+        \'t:traits,traits',
+        \'i:impls,trait implementations',
+    \]
+    \}
+
+set number
